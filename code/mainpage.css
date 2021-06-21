@@ -1,0 +1,140 @@
+#map {
+    height: 70%;
+    width: 70%;
+    margin: 10px;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 10px;
+    padding: 0;
+}
+
+.set_float_left {
+    float: left;
+    width: 550px;
+    height: 710px;
+    margin: 10px;
+}
+
+#place_info {
+    border: 1px solid black;
+    background-color: #A0A0F8;
+    display: inline-block;
+}
+
+#floatout {
+    clear: left;
+}
+
+#small_button {
+    border: none;
+    outline: 0;
+    background-color: #A0A0F8;
+}
+
+#small_button:hover {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.show_destination {
+    background: #A0A0F8;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 50px;
+    font-size: 1.6em;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+    display: inline-block;
+    width: 100%;
+}
+
+.show_destination:hover {
+    background: #fff;
+    color: #616CC0;
+}
+
+.show_destination:before,
+.show_destination:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #616CC0;
+    transition: 400ms ease all;
+}
+
+.show_destination:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.show_destination:hover:before,
+.show_destination:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+#wri {
+    text-decoration: none;
+    margin: 15px;
+}
+
+#wri:hover {
+    font-size: 20px;
+}
+
+.myLo {
+    background: #fff;
+    color: black;
+    border: none;
+    position: relative;
+    height: 50px;
+    font-size: 20px;
+    padding: 0 2em;
+    cursor: pointer;
+    transition: 400ms ease all;
+    outline: none;
+    display: inline-block;
+    width: 50%;
+    margin-left: 1230px;
+}
+
+.myLo:hover {
+    font-size: 25px;
+    color: #A0A0F8;
+    font-weight: 1000;
+}
+
+table.board {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    margin: 20px 10px;
+}
+
+table.board th {
+    width: 350px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}
+
+table.board td {
+    width: 1550px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+}

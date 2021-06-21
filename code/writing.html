@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Writing page</title>
+
+    <style>
+        .populationImg1 {
+            content: url(image/one.PNG);
+            height: 100px;
+            width: 60px;
+            display: inline;
+            margin-left: 10px;
+        }
+        
+        .populationImg2 {
+            content: url(image/two.PNG);
+            height: 100px;
+            width: 70px;
+            display: inline;
+            margin-left: 10px;
+        }
+        
+        .populationImg3 {
+            content: url(image/three.PNG);
+            height: 100px;
+            width: 84px;
+            display: inline;
+            margin-left: 10px;
+        }
+        
+        .populationImg4 {
+            content: url(image/four.PNG);
+            height: 100px;
+            width: 105px;
+            display: inline;
+            margin-left: 10px;
+        }
+        
+        .populationImg5 {
+            content: url(image/five.PNG);
+            height: 100px;
+            width: 110px;
+            display: inline;
+            margin-left: 10px;
+        }
+        
+        b {
+            font-size: 20px;
+        }
+        
+        input[type='text'],
+        input[type="datetime-local"],
+        select,
+        #value,
+        input[type="range"] {
+            width: 200x;
+            height: 22px;
+            margin-left: 25px;
+            background-color: #edf2fc;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 15px;
+        }
+        
+        input[type="submit"] {
+            background-color: #cad9f6;
+            width: 300px;
+            height: 30px;
+            border-radius: 20%;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        #last {
+            clear: both;
+        }
+        
+        #flo {
+            float: left;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        li input {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>입력 형식</h2>
+    <p>아래 형식에 <u>빈칸 없이</u> 모두 입력한 뒤 <b>제출</b> 버튼을 눌러주세요.</p>
+
+    <form method="POST" action="register.php">
+
+        <p><b>1.</b> 작성자의 이름을 입력하세요.</p>
+        <input type="text" name="writer">
+
+        <p><b>2.</b> 작성자의 전화번호를 입력하세요.</p>
+        <input type="text" name="phoneNum">
+
+        <p><b>3.</b> 현재 날짜 및 시간을 선택하세요.</p>
+        <input type="datetime-local" name="today" />
+
+        <p><b>4.</b> 방문 장소를 선택하세요.</p>
+        <select name="destination">
+            <optgroup label="인천">
+                <option>마시안 해변</option>
+                <option>을왕리 해수욕장</option>
+                <option>송도 센트럴파크</option>
+                <option>월미도 테마파크</option>
+                <option>선재도 뻘다방</option>
+                <option>실미 유원지 & 해수욕장</option>
+            </optgroup>
+            <optgroup label="서울">
+                <option>경복궁</option>
+                <option>코엑스 몰</option>
+                <option>별마당 도서관</option>
+                <option>청계천</option>
+                <option>광장 시장</option>
+                <option>인사동길</option>
+                <option>동대문디자인플라자</option>
+                <option>홍대</option>
+                <option>N서울타워</option>
+            </optgroup>
+            <optgroup label="가평,청평">
+                <option>남이섬</option>
+                <option>아침고요수목원</option>
+                <option>쁘띠프랑스</option>
+                <option>가평레일바이크</option>
+                <option>청평호</option>
+            </optgroup>
+
+        </select>
+
+        <p><b>5.</b> 사람이 [거의없음] , [조금있음] , [적당함] , [많음] , [아주많음] 중 선택하세요.</p><br><br>
+
+        <input id='flo' type="radio" name="population" value="few">
+        <div id='flo' class="populationImg1"></div>
+        </input>
+
+        <input id='flo' type="radio" name="population" value="afew">
+        <div id='flo' class="populationImg2"></div>
+        </input>
+
+        <input id='flo' type="radio" name="population" value="enough">
+        <div id='flo' class="populationImg3"></div>
+        </input><br>
+
+        <input id='flo' type="radio" name="population" value="lot">
+        <div id='flo' class="populationImg4"></div>
+        </input><br>
+
+        <input id='flo' type="radio" name="population" value="crowded">
+        <div id='flo' class="populationImg5"></div><br><br><br><br><br>
+
+        <p><b>6.</b> 전용 주차 시설 보유</p>
+        <ul>
+            <li> <input type="radio" name="parking" value="yes">있음</input>
+            </li>
+            <li> <input type="radio" name="parking" value="no">없음</input>
+            </li>
+            <li> <input type="radio" name="parking" value="unknown">알 수 없음</input>
+            </li>
+        </ul>
+
+        <p id="last"><b>7.</b>인근 유명한 맛집 추천 (자유롭게 작성)</p>
+        <textarea name="content" cols="50" rows="7"></textarea><br>
+
+
+        <p><b>8.</b>관광지 총 평가 점수</p>
+        <script language="javascript">
+            function SetValue(this) {
+                range_val.value = this.value;
+            }
+        </script>
+        <input type="range" name="rating" min="0" max="5" step="0.5" oninput="document.getElementById('value').innerHTML=this.value;">&nbsp;
+        <span id="value">평점 표시</span><br>
+
+
+
+        <input type="submit">
+
+    </form>
+</body>
+
+</html>
